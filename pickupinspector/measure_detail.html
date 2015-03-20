@@ -1,0 +1,83 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+  <script type="text/javascript" src="/javascript/frequency-response.js"></script>
+  <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+  <script type="text/javascript" src="/javascript/javascript.js"></script>
+  <script type="text/javascript" src="/javascript/measure_detail.js"></script>
+  <script type="text/javascript" src="/javascript/init.js"></script>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>Measure Detail</title>
+  </head>
+  <body onload="initMeasureDetail({{m.f}},{{m.vol}})">
+	<div id="headerLoader"></div>
+	<div class="main" id="measureBody">
+	<div class="main3" >
+		<button class="remove" onclick="removeMeasure({{m.id}})">Remove</button>
+		<select class="compare_option" id="option" onChange="loadMeasure()">
+				<option> ... </option>
+				{% for m in m_names %}
+				<option value="{{m.id}}"> {{ m.id }}, {{m.name}}, {{m.pickup}}  </option>
+				{% endfor %}
+			</select>
+			<span class="compare">Compare with</span>
+	</div>
+	<div class="main3">
+		<div class="main2">		
+			<div><b>Id: </b><span>{{ m.id }}</span></div>
+			<form action="/circuit/list/{{ m.name }}" method="get">
+				<b><span class="circuit_title">Circuit</span>: </b> {{ m.name }}
+				<input class="see_detail" type="submit" value="see detail"></input>
+			</form>
+			<div><b><span class="date">Date</span>: </b> {{ m.date[:19] }}</div>
+			<div><b>F: </b><span id="f">{{ m.f / 1000 }}</span> kHz</div>
+			<div><b>Q: </b><span id="q">{{ m.q }}</span></div></br>
+			{% if m.type == 'serial_1_2' %}
+				<div>
+					<div><b><span class="pos_pot_title">Potentiometers position</span></b></div>
+					<div><b>V: </b>{{ m.x }}</div>
+					<div><b>T: </b>{{ m.y }}</div> 
+				</div>
+			{% endif %}
+			</br>
+			<div><b><span class="audio_title">Audio samples</span></b></div>
+			<table>
+				<tr><td>Blues 1</td><td><button class="play_pause" onClick="playAudio('blues1',1)">Play/Pause</button></td></tr>
+				<tr><td>Blues 2</td><td><button class="play_pause" onClick="playAudio('blues2',1)">Play/Pause</button></td></tr>
+				<tr><td>Heavy</td><td><button class="play_pause" onClick="playAudio('heavy',1)">Play/Pause</button></td></tr>
+				<tr><td>Smooth</td><td><button class="play_pause" onClick="playAudio('smooth',1)">Play/Pause</button></td></tr>
+			</table>
+			</br>
+			<div><b><span class="tag_title">Tags</span>: </b><span id="tags1"></span></div>
+		</div>
+		<div class="main2" id="compare">
+			<div><b>Id: </b><span id="id"></span></div>
+			<form id="circuitName" action="" method="get">
+				<b><span class="circuit_title">Circuit</span>: </b><span id="name"></span>
+				<input class="see_detail" type="submit" value="see detail"></input>
+			</form>
+			<div><b><span class="date">Date</span>: </b><span id="date"></span></div>
+			<div><b>F: </b><span id="f2"></span> kHz</div>
+			<div><b>Q: </b><span id="q2"></span></div></br>
+			<div id="pos_pot"></div>  
+			</br>
+		
+			<div><b><span class="audio_title">Audio samples</span></b></div>
+			<table>
+				<tr><td>Blues 1</td><td><button class="play_pause" onClick="playAudio('blues1',2)">Play/Pause</button></td></tr>
+				<tr><td>Blues 2</td><td><button class="play_pause" onClick="playAudio('blues2',2)">Play/Pause</button></td></tr>
+				<tr><td>Heavy</td><td><button class="play_pause" onClick="playAudio('heavy',2)">Play/Pause</button></td></tr>
+				<tr><td>Smooth</td><td><button class="play_pause" onClick="playAudio('smooth',2)">Play/Pause</button></td></tr>
+			</table></br>
+			<div><b><span class="tag_title">Tags</span>: </b><span id="tags2"></span></div>
+		</div>
+    </div>
+	<div class="main" id="canvas">
+			<h3 class="graphic_title">Transfer Function Graph</h3>
+			<canvas id="canvasID" width="600" height="450" style="border: 2px inset black;"></canvas>
+	</div>
+  </div>
+  </body>
+</html>
+{% endautoescape %}

@@ -1,0 +1,26 @@
+{ 		
+		"en" : {
+			"title": "All Measures",
+			"circuit_name": "Circuit",
+			"pickup_name": "Pickup",
+			"date": "Date", 
+			"see_detail": "see detail",
+			"remove": "remove"
+		}, 
+		"es": {
+			"title": "Listar medidas",
+			"circuit_name": "Circuito",
+			"pickup_name": "Pastilla",
+			"date": "Fecha", 
+			"see_detail": "ver detalle",
+			"remove": "eliminar"
+		},
+		"cat": {
+			"title": "Llistar mesures",
+			"circuit_name": "Circuit",
+			"pickup_name": "Pastilla",
+			"date": "Data", 
+			"see_detail": "veure detall",
+			"remove": "eliminar"
+		}
+}

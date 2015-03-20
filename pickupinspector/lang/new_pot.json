@@ -1,0 +1,32 @@
+{ 		
+		"en" : {
+			"title": "New Potentiometer",
+			"pname": "Name",
+			"resistance": "Resistance",
+			"tone_capacitor": "Tone Capacitor", 
+			"volume": "Volume",
+			"tone": "Tone",
+			"drop_down": "Choose an image", 
+			"save": "Save Pot."
+		}, 
+		"es": {
+			"title": "Nuevo potenciómetro",
+			"pname": "Nombre",
+			"resistance": "Resistencia",
+			"tone_capacitor": "Condensador de tono", 
+			"volume": "Volumen",
+			"tone": "Tono",
+			"drop_down": "Elige una imagen",  
+			"save": "Guardar potenc."
+		},
+		"cat": {
+			"title": "Nou potenciòmetre",
+			"pname": "Nom",
+			"resistance": "Resistència",
+			"tone_capacitor": "Condensador de to", 
+			"volume": "Volum",
+			"tone": "To",
+			"drop_down": "Tria una imatge", 
+			"save": "Guardar potenc."
+		}
+}

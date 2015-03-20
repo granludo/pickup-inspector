@@ -1,0 +1,92 @@
+<html>
+<head>
+	<title>Documentaci&oacute;</title>
+	<link href="/css/wiki.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="/javascript/javascript.js"></script>
+</head>
+<body>
+<div class="main">
+	<div> 
+		<form action="/wiki/cat/" method="get"><input class="flags" type="image" width="25" src="/images/cat.gif" name="cat"></form>
+		<form action="/wiki/en/" method="get"><input class="flags" type="image" width="25" src="/images/en.png" name="en"></form>
+		<form action="/wiki/cast/" method="get"><input class="flags" type="image" width="25" src="/images/es.png" name="es"></form>
+		<form action="/" method="get"><input class="back" type="submit" width="48" value="Torna a l&#8217;index"></form>
+	</div>
+<h1> DOCUMENTACI&#211; </h1>
+	<div> <a href="#Introduction">Introducci&#243;</a> <a href="#Teoria">Teoria</a> <a href="#Tutorial">Tutorial</a> </div>
+<h2><a name="Introduction">Introducci&#243;</a> </h2>
+<h3>&#191;Qu&#232; &#233;s Pickup Inspector?</h3>
+
+<div>Es tracta d&#8217;un sistema que pret&#233; dotar als guitarristes d&#8217;un nou mecanisme per a valorar, de manera objectiva i cient&#237;fica, el so de la seva pastilla de guitarra, incloent potenci&#242;metre i altres elements. </div>
+<img class="imageRight" width="300px" src="/images/pickupad.jpg"/>
+<h3>&#191;Perqu&#232; Pickup Inspector?</h3>
+<div>Dins el m&#243;n de les guitarres el&#232;ctriques existeix poc coneixement sobre les pastilles que capten el so. Les empreses intenten, a partir de la publicitat, fer pensar al comprador que la seva pastilla t&#233; un so concret, per&#242; no existeix cap base cient&#237;fica referent aix&#242;. A partir del llibre <i>Electric Guitar: Sound Secrets and Technology</i> de Helmuth Lemme, trobem una base te&#242;rica i pr&#224;ctica per extraure el valor qualitatiu de les pastilles.</div>
+<h2><a name="Teoria">Teoria</a></h2>
+<div>En una guitarra, hi ha multitud d&#8217;elements que afecten al seu so final. En el nostre cas pretenem donar-li valor al circuit electr&#242;nic que capta el so i l&#8217;envia a l&#8217;amplificador. Un circuit electr&#242;nic estar&#224; format per una o diverses pastilles i diferents elements com potenci&#242;metre de volum, de so, palanques de switch, condensadors, elements actius&#8230; </br></br> Actualment Pickup Inspector nom&#233;s contempla el cas simple d&#8217;un circuit format per una pastilla senzilla, un potenci&#242;metre de volum i un de so. A partir de les caracter&#237;stiques d&#8217;aquests elements obtenim els valors b&#224;sics per coneixer millor el so que tindr&#224; la nostra guitarra. </div>
+
+<h3>Valors d&#8217;entrada</h3>
+<img class="imageRight" width="200px" src="/images/electricbook.jpg"/>
+<div>Basant-nos en la teoria de Lemme, els valors m&#233;s importants a tenir en compte son els seg&#252;ents. Per la pastilla: </div>
+</br>
+<p>Induct&#224;ncia (L), calculada en Henries (H).</p>
+<p>Capacitat o capacit&#224;ncia (C), calculada en Faradays (F).</p>
+<p>Resist&#232;ncies en s&#232;rie i paral.lel (R), calculades en Ohms (&#937;). </p>
+<p>El Volum (Vol), mesurat en Volts (V).</p>
+<p>Voltatge inicial (V0), calculat en Volts (V).</p>
+</br>
+<div>Pels potenci&#242;metres es tenen en compte les seves resist&#232;ncies, calculades en Ohms (&#937;). 
+Altres valors a tenir en compte son la capacitat del condensador de to i la capacitat del cable, que es mesuren en Faradays. 
+Per a la configuraci&#243; tamb&#233; &#233;s important la posici&#243; dels potenci&#243;metres. Aquesta caracter&#237;stica &#233;s un valor de 0 a 1 on 0 significa el potenci&#242;metre a una posici&#243; inicial (volum al m&#237;nim) i 1, la posici&#243; totalment oposada (volum al m&#224;xim). </div>
+<h3>Valors de sortida</h3>
+<div>A partir d&#8217;aquests valors constru&#239;m una funci&#243; de transfer&#232;ncia i se&#8217;n deriva un filtre de pas baix. 
+Si apliquem aquesta funci&#243; sobre un rang de freq&#252;&#232;ncies audibles per l&#8217;o&#239;da humana (de 0 a 20kHz), el filtre trobar&#224; una freq&#252;&#232;ncia de tall (fg). A aquesta freq&#252;&#232;ncia, la funci&#243; de transfer&#232;ncia decau en 20db/d&#232;cada. Una mica abans d&#8217;arribar a aquesta freq&#252;&#232;ncia trobem una reson&#224;ncia el&#232;ctrica entre la induct&#224;ncia de la pastilla i la capacitat del circuit. La freq&#252;&#232;ncia a on es troba aquesta resonancia s&#8217;anomena <b>freq&#252;&#232;ncia de resonancia (fo)</b> i exhibeix un pic d&#8217;amplitud. Quan apliquem la funci&#243; de transfer&#232;ncia sobre el voltatge inicial V0, n&#8217;obtenim el voltatge de sortida V1. La relaci&#243; entre V0 i V1 s&#8217;anomena <b>Q o qualitat</b>. </div>
+<img class="imageCenter" src="/images/frequencyresponse.gif"/>
+<h3><a name="Com afecten els valors de sortida">Com afecten els valors de sortida</a></h3>
+<div>Coneixent la freq&#252;&#232;ncia de resson&#224;ncia i V1 (o Q, en el seu defecte) podem saber amb bastant precissi&#243; com afectar&#224; el nostre circuit al so de la guitarra. Al actuar com un filtre de pas baix, els arm&#242;nics propers a la freq&#252;&#232;ncia de resson&#224;ncia (f0) ser&#224;n amplificats, mentre que els arm&#242;nics molt m&#233;s alts ser&#224;n atenuats a 20db/d&#232;cada. Els arm&#242;nics m&#233;s baixos que f0 no canviar&#224;n d&#8217;intensitat. Podem descriure-ho el so respecte f0 de manera sinest&#232;tica:</div>
+</br>
+<p>si f0 &#233;s m&#233;s petit o igual a 1500Hz: el so &#233;s molt suau, apagat.</p>
+<p>si f0 volta els 2000Hz: el so &#233;s greu, molt <i>bluesero</i>.</p>
+<p>si f0 volta els 2500Hz: cont&#233; un so intermig, ni apagat ni estrident.</p>
+<p>si f0 volta els 3000Hz: el so &#233;s brillant.</p>
+<p>si f0 volta els 4000Hz: t&#237;pic so Fender, met&#224;l&#183;lic, agut o <i>twangy</i>.</p>
+<p>si f0 volta els 5000Hz-6000Hz: so accentuat o escarpat, molt agut.</p>
+<p>si f0 est&#224; per sobre els 7000Hz: so trencad&#237;s i fr&#224;gil, propi de les guitarres ac&#250;stiques.</p>
+</br>
+<div>La relaci&#243; Q ens indicar&#224; l&#8217;<i>expressivitat</i> de la guitarra. Quan m&#233;s alta sigui la Q, m&#233;s notarem les caracter&#237;stiques del so descrit anteriorment. Una Q propera a 1.5 o 2 donar&#224; un so potent i amb for&#231;a, mentre que una Q per sobre de 3 ser&#224; estrident. </div>
+<h2><a name="Tutorial">Tutorial Pickup Inspector</a></h2>
+<div>L&#8217;objectiu principal de Pickup Inspector &#233;s obtenir unes mesures sobre un circuit i poder interpretar-les, de manera que realitzarem una gu&#237;a per a aconseguir aquest resultat. Pickup Inspector est&#224; format per dues grans parts. Per una banda tenim l&#8217;aplicaci&#243; web, on podem gestionar els nostres circuits i visualitzar els resultats de les mesures. Per altra, a la part electr&#242;nica, trobem l&#8217;Arduino, junt amb el programa local SAN (Sistema d&#8217;An&#224;lisi). Ens referirem a aquests dos sistemes com <i>la web</i> i SAN. </div>
+<h3>Com crear un circuit</h3>
+<img class="imageLeft" width="500px" src="/images/SED4.jpg"/>
+<div>El primer que necessitem per fer una mesura &#233;s un circuit sobre el que mesurar. Per crear un circuit podem anar a la pestanya <a href="/circuit/new/">Nou Circuit</a> a la pantalla principal de la web. Aqu&#237; se&#8217;ns demanar&#224; que triem un nom pel nostre circuit. El nom del circuit ha de ser &#250;nic. Despr&#233;s, la web ens demanar&#224; els elements del qual est&#224; format el circuit. </br></br>Actualment, la web nom&#233;s accepta un circuit b&#224;sic format per una pastilla simple, un potenci&#242;metre de volum i un de to. Per cada un d&#8217;aquests tres elements triarem una opci&#243; dels seus respectius desplegables. Per crear els nostres propis elements anem a <a href="#Com crear elements">Com crear elements</a>. Se&#8217;ns desplegaran uns formularis on podem visualitzar les dades dels elements. Un cop tinguem seleccionats els elements que volem, cliquem sobre <i>Guardar el circuit</i> i obtindrem un missatge afirmant que el nostre circuit ha estat guardat amb &#232;xit. Tamb&#233; tenim l&#8217;opci&#243; d&#8217;incloure la capacitat del cable (Cc). &#201;s un camp optatiu que t&#233; per valor 0.</div>
+<h3><a name="Com crear elements">Com crear elements</a></h3>
+<div>Els elements d&#8217;un circuit poden ser de tres tipus: pastilles, potenci&#242;metres de volum o potenci&#242;metres de to. </div>
+<h4>Potenci&#242;metres</h4>
+<div>Anem a la pestanya <a href="/pot/new/">Nou potenci&#242;metre</a> de la web per crear un nou potenci&#242;metre. Aqu&#237; haurem de triar quin tipus de potenci&#242;metre volem (so o volum). Si el triem de to, haurem d&#8217;incloure el valor de la capacitat del condensador. S&#8217;ha de tenir especial cura amb l&#8217;escala dels valors: no son el mateix 0,47 pF que 0.47 nF! Un cop introdu&#239;ts aquests valors, cliquem sobre <i>Guarda potenci&#242;metre</i> i ja est&#224;. </div>
+
+<h4>Pastilles</h4>
+<div>Les pastilles son la part principal del nostre circuit. Per crear una pastilla a la web hem d&#x2019;anar a <a href="/pickup/new/">Nova Pastilla</a> i tria un nom. Ens ser&aacute; necessari fer servir l&#x2019;aplicaci&oacute; local SAN junt amb Arduino. Per raons de l&ograve;gica, per mesurar els seus par&agrave;metres, ens fa falta que s&#x2019;inclogui aquesta pastilla en un nou circuit. <br/>Per obtenir SAN el podem descarregar de la pestanya <a href="/source/">Programari</a> de la web. Hem d&#x2019;instal&#x00b7;lar, tamb&eacute;, el software necessari.<br/><br/>Una vegada ho tinguem, hem de conectar el nostre Arduino al PC i trobar el nom del seu port serie. Per fer-ho, obrim el programa d&#x2019;Arduino i anem a la pestanya <i>Eines -&gt; Port Serial.</i></div>
+		<img class="imageCenter" width="500px" src="/images/puertoserial.jpg"/>
+<div>Apuntem el seu valor i obrim el codi de gui.py amb un editor de text (Bloc de Notes). Busquem el par&aacute;metre <i>serialNo</i> i li introdu&iuml;m el valor del nostre por s&egrave;rie entre cometes senzilles. Si el nostre port serie t&eacute; el nom portSerie1, hem d&#x2019;incloure&#x2019;l com &#x2018;portSerie1&#x2019;. Un cop hem fet aquest canvi, ja no far&agrave; falta que ho tornem a posar cada cop que fem una mesura. Guardem l&#x2019;arxiu i l&#x2019;executem:</div> 
+</br><p class="code">python gui.py</p></br>
+<div>Quan obrim la versi&oacute; gr&aacute;fica ens apareixer&agrave; una etiqueta donant-nos la benvinguda i preguntant l&#x2019;idioma amb el qual volem fer les mesures. El triem i seguim. SAN ens proporcionar&agrave; una llista de circuits amb les seves respectives pastilles a ser mesurades. Quan premem sobre el bot&oacute; <i>Fer mesura</i>, l&#x2019;Arduino far&agrave; els c&agrave;lcus. Un missatge ens avisar&agrave; que hem de connectar el circuit de mesura del volum i tocar la tercera corda (G) de la guitarra. En cop ho haguem fet, Arduino ens enviar&agrave; el resultat, que quedar&agrave; reflectit a la nostra pantalla. Si volem fer una altra mesura, podem pr&eacute;mer sobre <i>M&eacute;s mesures</i>. No hem d&#x2019;oblidar-nos de tenir l&#x2019;Arduino conectat i pujar-li el fitxer <i>san.ino</i> que trobarem a la p&agrave;gina web.</div>
+<img class="imageCenter" width="500px" src="/images/serialNo.png"/>
+<h3>Visualitzar elements / circuits</h3>
+<div>Aquesta opci&#243; &#233;s accessible des de l&#8217;&#237;ndex i all&#224; hi podem veure els elements que hem creat. Tamb&#233; podem veure els circuits que tenim fins ara. Si anem a <i>Veure detall</i> podrem veure les seves dades i una llista de les mesures fetes sobre aquell circuit. </div>
+
+<h3>Realitzar una mesura</h3>
+<div>Un cop tenim tot aix&#242;, ja podem fer la mesura. Per aix&#242;, haurem de seleccionar un circuit de la nostra llista. Un desplegable ens mostrar&#224; les dades del circuit seleccionat. Per &#250;ltim, far&#224; falta introduir la posici&#243; dels potenci&#242;metres. Un 0 indicar&#224; que el valor est&#224; al m&#237;nim i un 1, al m&#224;xim. Si premem sobre <i>Fer la mesura</i> i ens esperem uns segons, obtindrem la nostra primera mesura. </div>
+
+<h3>Visualitzar una mesura</h3>
+<div>Per visualitzar-la en la seva totalitat podem premer sobre <i>Veure detall</i> o podem anar a la llista de mesures amb <a href="/measure/list/">Totes les mesures</a>. Un cop a la vista en detall, podrem accedir al circuit sobre el que s&#8217;ha efectuat la mesura o veure els resultats emesos. A <i>Mostres d'&#237;udio</i> podem escoltar unes proves d&#8217;audio on se&#8217;ls hi ha aplicat un filtre amb Web Audio API per a saber, m&#233;s o menys, quin so tindr&#224; la nostra guitarra. Tamb&#233; podem veure la corba creada per la funci&#243; de transfer&#232;ncia o guiar-nos per les etiquetes <i>Etiquetes</i>. Per saber interpretar els valors resultants, anar a <a href="#Com afecten els valors de sortida">Com afecten els valors de sortida</a>.</div></br>
+
+<img class="imageCenter" width="500px" src="/images/transferfunction.png"/>
+
+<h3>Comparar dues mesures</h3>
+<div>A la mateixa p&#224;gina on podem visualitzar la mesura, trobarem l&#8217;etiqueta <i>Compara amb</i> amb un men&#250; desplegable al costat. En aquest men&#250; trobarem els id&#8217;s d&#8217;altres mesures. Si en seleccionem un, ens apareixer&#224; l&#8217;informaci&#243; al detall d&#8217;aquesta mesura. D&#8217;aquesta manera podem constratar els valors obtinguts sense canviar de p&#224;gina. En el cas del gr&#224;fic dibuixat per la funci&#243; de transfer&#232;ncia, les corbes d&#8217;una i altra mesura es sobreposaran en diferents colors.</div>
+
+<h3>Eliminar elements, circuits i mesures</h3>
+<div>Si b&#233; podem crear elements, circuits o mesures, tamb&#233; les podem eliminar. Tant a la p&#224;gina de detall com a la llista, podem trobar, un bot&#243; <i>Elimina</i> que ens permetr&#224; fer aix&#242;. En el cas d&#8217;eliminar circuits, hem de tenir en compte que, si eliminem un circuit, tamb&#233; eliminarem les mesures associades a aquest circuit. </div></br><a href="#">Torna a dalt</a></br>
+</div>
+</body>
+</html>

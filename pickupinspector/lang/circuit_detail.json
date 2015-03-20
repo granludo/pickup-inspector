@@ -1,0 +1,29 @@
+{ 		
+		"en" : {
+			"title": "Circuit detail",
+			"name": "Name",
+			"remove": "Remove",
+			"type_title": "Type",
+			"measures_title": "Measures from this circuit",
+			"date": "Date",
+			"see_detail": "see detail"
+		}, 
+		"es": {
+			"title": "Detalle del circuito",
+			"name": "Nombre",
+			"remove": "Eliminar",
+			"type_title": "Tipo",
+			"measures_title": "Medidas de este circuito",
+			"date": "Fecha",
+			"see_detail": "ver detalle"
+		},
+		"cat": {
+			"title": "Detall del circuit",
+			"name": "Nom",
+			"remove": "Eliminar",
+			"type_title": "Tipus",
+			"measures_title": "Mesures d'aquest circuit",
+			"date": "Data",
+			"see_detail": "veure detall"
+		}
+}

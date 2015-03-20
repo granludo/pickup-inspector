@@ -1,0 +1,32 @@
+{ 		
+		"en" : {
+			"title": "New Pickup",
+			"pname": "Name",
+			"resistance": "Resistance",
+			"inductance": "Inductance", 
+			"capacitance": "Capacitance",
+			"to_measure": "Measure with SAN",
+			"drop_down": "Choose an image", 
+			"save": "Save Pickup"
+		}, 
+		"es": {
+			"title": "Nueva pastilla",
+			"pname": "Nombre",
+			"resistance": "Resistencia",
+			"inductance": "Inductancia", 
+			"capacitance": "Capacidad",
+			"to_measure": "Medir con SAN",
+			"drop_down": "Elige una imagen", 
+			"save": "Guardar pastilla"
+		},
+		"cat": {
+			"title": "Nova pastilla",
+			"pname": "Nom",
+			"resistance": "Resistència",
+			"inductance": "Inductància", 
+			"capacitance": "Capacitat",
+			"to_measure": "Mesurar amb SAN",
+			"drop_down": "Tria una imatge", 
+			"save": "Guardar pastilla"
+		}
+}

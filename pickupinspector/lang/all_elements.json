@@ -1,0 +1,50 @@
+{ 		
+		"en" : {
+			"title": "All Elements",
+			"all_pickups": "All Pickups",
+			"Rp": "R (serial)",
+			"Rpp": "R (parallel)",
+			"elem_name": "Name",
+			"to_measure": "To measure with SAN", 
+			"yes": "Yes",
+			"no": "No",
+			"view_image": "view image",
+			"remove": "remove", 
+			"all_pots": "All Potentiometers",
+			"pot_type": "type",
+			"volume":"volume",
+			"tone":"tone"
+		}, 
+		"es": {
+			"title": "Listar elementos",
+			"all_pickups": "Todas las pastillas",
+			"Rp": "R (serie)",
+			"Rpp": "R (paralelo)",
+			"elem_name": "Nombre",
+			"to_measure": "A medir con SAN", 
+			"yes": "Sí",
+			"no": "No",
+			"view_image": "ver imagen",
+			"remove": "eliminar", 
+			"all_pots": "Todos los potenciómetros",
+			"pot_type": "tipo",
+			"volume":"volumen",
+			"tone":"tono"
+		},
+		"cat": {
+			"title": "Llistar elements",
+			"all_pickups": "Totes les pastilles",
+			"Rp": "R (sèrie)",
+			"Rpp": "R (paral·lel)",
+			"elem_name": "Nom",
+			"to_measure": "A mesurar amb SAN", 
+			"yes": "Si",
+			"no": "No",
+			"view_image": "veure imatge",
+			"remove": "eliminar", 
+			"all_pots": "Tots els potenciòmetres",
+			"pot_type": "tipus",
+			"volume":"volum",
+			"tone":"to"
+		}
+}

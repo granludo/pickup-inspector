@@ -1,0 +1,40 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+	 <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <script src="/javascript/sorttable.js"></script>
+	 <script type="text/javascript" src="/javascript/init.js"></script>
+     <script type="text/javascript" src="/javascript/all_measures.js"></script>
+  <title>All Measures</title>
+  </head>
+  <body onload="loadPage()">
+  <div id="headerLoader"></div>
+  <div class="main">
+  <div class="main4">
+  <table class="sortable"><tr class="first_row"><td>ID</td>
+						  <td id="circuit_name">Circuit</td>
+						  <td id="pickup_name">Pickup</td>
+						  <td id="date">Date</td><td>F</td><td>Q</td></tr>
+		{% for m in m_names %}
+			<tr id="m{{m.id}}">
+				<td> {{m.id}} </td>
+				<td> {{m.name}} </td> 
+				<td> {{m.pickup}} </td>
+				<td> {{m.date[:19]}}</td>  
+		 		<td> {{m.f/1000}} kHz</td>  
+				<td> {{m.q[:5]}} </td> 
+				<td><form action="{{m.id}}" method="get">
+					<input class="see_detail" type="submit" value="see detail"></input> 
+					</form> 
+				</td>
+				<td><button class="remove" onclick="removeMeasure({{m.id}})">remove</button>
+				</td>
+			</tr>
+		{% endfor %}
+  </table>
+  </body>
+</html>
+{% endautoescape %}

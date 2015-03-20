@@ -1,0 +1,108 @@
+<html>
+<head>
+	<title>Documentaci&oacute;n</title>
+	<link href="/css/wiki.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="/javascript/javascript.js"></script>
+</head>
+<body>
+	<div class="main">
+		<div> 
+		<form action="/wiki/cat/" method="get"><input class="flags" type="image" width="25" src="/images/cat.gif" name="cat"></form>
+		<form action="/wiki/en/" method="get"><input class="flags" type="image" width="25" src="/images/en.png" name="en"></form>
+		<form action="/wiki/cast/" method="get"><input class="flags" type="image" width="25" src="/images/es.png" name="es"></form>
+		<form action="/" method="get"><input class="back" type="submit" width="48" value="Vuelve a l&#8217;&iacute;ndice"></form>
+		</div>
+		<h1>DOCUMENTACI&Oacute;N WEB</h1>
+		<div> <a href="#Introduction">Introducci&oacute;n</a> <a href="#Teoria">Teoria</a> <a href="#Tutorial">Tutorial</a> </div>
+		<h2><a name="Introduction">Introducci&#243;n</a> </h2>
+		<h3>&#x00bf;Qu&eacute; es Pickup Inspector?</h3>
+		<div>Se trata de un sistema que pretende dotar a los guitarristas de un nuevo mecanismo para valorar de manera objetiva y 		
+		cient&iacute;fica, el sonido de su pastilla de guitarra, incluyendo potenci&oacute;metros y otros elementos</div>
+		<img class="imageRight" width="300px" src="/images/pickupad.jpg"/>		
+		<h3>&#x00bf;Porqu&eacute; Pickup Inspector?</h3>
+		<div>Dentro del mundo de las guitarras el&eacute;ctricas, existe poco conocimiento sobre las pastillas que captan el sonido. Las empresas intentan, a partir de la publicidad, hacer pensar al comprador que su pastilla tiene un sonido concreto, pero no existe ninguna base cient&iacute;fica referente al sonido.<br/><br/>A partir del libro <i>Electric Guitar: Sound Secrets and Technology</i> de Helmuth Lemme, encontramos una base te&oacute;rica y pr&aacute;ctica para extraer el valor cualitativo de las pastillas.</div>
+		<h2><a name="Teoria">Teor&iacute;a</a></h2>
+		<div>
+			En una guitarra hay multitud de elementos que afectan a su sonido final. En nuestro caso pretendemos darle valor al circuito 				electr&oacute;nico, que capta el sonido y lo env&iacute;a al amplificador. Un circuito electr&oacute;nico 
+			estar&aacute; formado por varias pastillas y diferentes elementos como potenci&oacute;metros de volumen, de sonido, palancas de 			switch, condensadores, elementos activos&#x2026;<br/><br/>Actualmente Pickup Inspector solo contempla el caso simple de un 				circuito formado por una pastilla, un potenci&oacute;metro de volumen y uno de sonido. A partir de las 		
+			caracter&iacute;sticas de estos elementos obtenemos los valores b&aacute;sicos para conocer mejor el sonido que tendr&aacute; 
+			nuestra guitarra.
+		</div>
+		<h3>Valores de entrada</h3>
+		<img class="imageRight" width="200px" src="/images/electricbook.jpg"/>
+		<div>Bas&aacute;ndonos en la teor&iacute;a de Lemme, los valors m&aacute;s 
+			importantes a tener en cuenta son los siguientes. Para la pastilla:</div>
+		</br>
+		<p>Induct&aacute;ncia (L), calculada en Henrios (H).</p>
+		<p>Capacidad o capacit&aacute;ncia (C), calculada en Faradays (F).</p>
+		<p>Resistencias en s&eacute;rie y paralelo (R), calculadas en Ohmios (&#x03a9;).</p>
+		<p>El Volumen (Vol), calculado en Voltios (V).</p>
+		<p>Voltaje inicial (V0), calculado en Voltios (V).</p>
+		</br>
+		<div>
+			Para los potenci&oacute;metros se tienen en cuenta sus resistencias, calculadas en Ohmios (&#x03a9;). Otros valores a tener en cuenta son la capacidad del condensador de tono y la capacidad del cable, que se miden en Faradays. Para la configuraci&oacute;n tambi&eacute;n es importante la posici&oacute;n de los potenci&oacute;metros. Esta caracter&iacute;stica es un valor de 0 a 1 donde 0 significa el potenci&oacute;metro a una posici&oacute; inicial (volumen al m&iacute;nimo) y 1, la posici&oacute;n totalmente opuesta (volumen al m&aacute;ximo).
+		</div>
+		<h3>Valores de salida</h3>
+		<div>
+A partir de estos valores construimos una funci&oacute;n de transferencia y se deriva un filtro de paso bajo. Si aplicamos esta funci&oacute;n sobre un rango de frecuencias audibles para el o&iacute;do humano (de 0 a 20kHz), el filtro encuentra una frecuencia de corte (fg). A esta frecuencia, la funci&oacute;n de transferencia decae en 20db/d&eacute;cada. Un poco antes de llegar a esta frecuencia encontramos una resonancia el&eacute;ctrica entre la inductancia de la pastilla y la capacidad del circuito. La frecuencia donde se encuentra esta resonancia se llama <b>frecuencia de resonancia (fo)</b> y exhibe un pico de amplitud. Cuando aplicamos la funci&oacute;n de transferencia sobre el voltaje inicial V0, obtenemos el voltaje de salida V1. La relaci&oacute;n entre V0 y V1 se llama <b>Q o calidad</b>.</div>
+		
+		<img class="imageCenter" src="/images/frequencyresponse.gif"/>
+		<h3><a name="Com afecten els valors de sortida">C&oacute;mo afectan los valores de salida</a></h3>
+		<div>
+Conociendo la frecuencia de resonancia y V1 (o Q, en su defecto) podemos saber con bastante precisi&oacute;n c&oacute;mo afectar&aacute; nuestro circuito al sonido de la guitarra.<br/><br/>Al actuar sobre un filtro de paso bajo, los arm&oacute;nicos cercanos a la frecuencia de resonancia (f0) seran amplificados, mientras que los arm&oacute;nicos mucho m&aacute;s altos seran atenuados a 20db/d&eacute;cada. Los arm&oacute;nicos m&aacute;s bajos que f0 no canviaran de intensidad.<br/><br/>Podemos describir el sonido respecto f0 de manera sinest&eacute;tica:</div>
+		<p>si f0 es menor o igual a 1500Hz: el sonido es muy suave, apagado.</p>
+		<p>si f0 ronda los 2000Hz: el sonido es grueso, muy &#x2018;bluesero&#x2019;.</p>
+		<p>si f0 ronda los 2500Hz: contiene un sonido intermedio, ni apagado ni estridente.</p>
+		<p>si f0 ronda los 3000Hz: el sonido es brillante.</p>
+		<p>si f0 ronda los 4000Hz: t&iacute;pico sonido Fender, met&aacute;lico, agudo o &#x2018;twangy&#x2019;.</p>
+		<p>si f0 ronda los 5000Hz-6000Hz: sonido acentuado o escarpado, muy agudo.</p>
+		<p>si f0 est&aacute; por encima de 7000Hz: sonido quebradizo, fr&aacute;gil, propio de las guitarras ac&uacute;sticas.</p>
+		</br>
+		<div>
+			La relaci&oacute;n Q nos indicar&aacute; la <i>expresividad</i> de la guitarra. Cuando m&aacute;s alta sea la Q, m&aacute;s notaremos las caracter&iacute;sticas del sonido descrito anteriormente (u otras como, por ejemplo, la distorsi&oacute;n). Una Q cercana a 1.5 o 2 dar&aacute; un sonido potente y con fuerza, mientra que una Q por encima de 3 ser&aacute; estridente.
+		</div>
+		<h2><a name="Tutorial">Tutorial</a></h2>
+		<div>
+El objetivo principal de Pickup Inspector es obtener unas medidas sobre el circuito y poder interpretarlas, de manera que realizaremos una gu&iacute;a para conseguir este resultado.<br/><br/>Pickup Inspector est&aacute; formado por dos grandes partes. Por un lado tenemos la aplicaci&oacute;n web, donde podemos gestionar nuestros circuitos y visualizar los resultados de las medidas. Por otro, en la parte electr&oacute;nica encontramos al Arduino, junto con el programa local SAN (Sistema de an&aacute;lisi). Nos referimos a estos dos sistemas como <i>la web</i> y SAN.
+		</div>
+		<h3>C&oacute;mo crear un circuito</h3>
+		<img class="imageLeft" width="500px" src="/images/SED4.jpg"/>
+		<div>
+Lo primero que necesitamos para hacer una medida es un circuito sobre el que medir. Para crear un circuito podemos ir a la pesta&ntilde;a <a href="/circuit/new/">Nuevo Circuito</a> en la pantalla principal de la web.<br/><br/>Ah&iacute; se nos pide que escojamos un nombre para nuestro circuito. El nombre del circuito debe ser &uacute;nico. Despu&eacute;s, la web nos pedir&aacute; los elementos que forman el circuito. Actualmente la web solo acepta un circuto b&aacute;sico formado por una pastilla, un potenci&oacute;metro de volumen y uno de tono. <br/><br/>Para cada uno de estos elementos escogeremos una opci&oacute;n en sus respectivos desplegables. Para crear nuestros propios elementos vamos a <a href="#Com crear elements">C&oacute;mo crear elementos</a>. Se nos desplegar&aacute; unos formularios donde podremos visualizar los datos de los elementos. Una vez tenemos seleccionados los elementos que queremos, pulsamos sobre <i>Guardar Circuito</i> y obtenemos un mensaje afirmando que nuestro circuito se ha guardado con &eacute;xito.<br/><br/>Tambi&eacute;n tenemos la opci&oacute;n de incluir la capacidad del cable (Cc). Es un campo optativo que tiene por defecto valor 0.
+		</div>
+		<h3><a name="Com crear elements">C&oacute;mo crear elementos</a></h3>
+		<div>Los elementos de un circuito pueden ser de tres tipos: pastillas, potenci&oacute;metros de volumen o potenci&oacute;metros de tono. Para cada elemento debemos asignarle una imagen de las disponibles en la p&aacute;gina web.</div>
+		<h4>Potenci&oacute;metros</h4>
+		<div>Vamos a la pesta&ntilde;a de <a href="/pot/new/">Nuevo Potenci&oacute;metro</a> de la web para crear un nuevo potenci&oacute;metro. Aqu&iacute; podemos elegir qu&eacute; tipo de potenci&oacute;metro queremos (tono o volumen). Si elegimos el de tono, debemos incluir el valor de la capacidad del condensador. Se debe tener especial cura con la escala de valores: no son lo mismo 0.47 pF que 0.47 nF!<br/><br/>Una vez incluidos estos valores, pulsamos sobre <i>Guardar Potenci&oacute;metro</i> y ya est&aacute;.</div>
+		<h4>Pastillas</h4>
+		<div>Las pastillas son la parte principal de nuestro circuito. Para crear una pastilla en la web debemos ir a <a href="/pickup/new/">Nueva Pastilla</a> y elegir un nombre. Nos ser&aacute; necesario usar la aplicaci&oacute;n local SAN junto con Arduino. Por razones de l&oacute;gica, para medir sus par&aacute;metros, hace falta que se incluya esta pastilla en un nuevo circuito.<br/>Para obtener SAN lo podemos descargar de la pesta&ntilde;a <a href="/source/">Programario</a> de la web. Debemos tambi&eacute;n, instalar el software necesario. <br/><br/>Una vez lo tenemos, debemos conectar nuestro Arduino al PC y encontrar el nombre de su puerto serie. Para hacerlo, abrimos el programa de Arduino y vamos a la pesta&ntilde;a <i>Herramientas -&gt; Puerto Serial</i>. </div>
+		<img class="imageCenter" width="500px" src="/images/puertoserial.jpg"/>
+<div>Apuntamos su valor y abrimos el c&oacute;digo de gui.py con un editor de texto (Bloc de Notas). Buscamos all&iacute; el par&aacute;metro <i>serialNo</i> y le introducimos el valor de nuestro puerto s&eacute;rie entre comillas simples. Si nuestro puerto s&eacute;rie tiene el nombre puertoSerie1, debemos incluirlo como &#x2018;puertoSerie1&#x2019;. Una vez hayamos hecho este cambio, ya no har&aacute; falta que lo entremos cada vez que hagamos una medida. Guardamos el archivo y lo ejecutamos:</div>
+		</br><p class="code">python gui.py</p></br>
+		<div> 
+Cuando abrimos la versi&oacute;n gr&aacute;fica nos aparecer&aacute; una etiqueta d&aacute;ndonos la bienvenida y preguntando el idioma en el que queremos hacer las medidas. Elegimos y seguimos. SAN nos proporcionar&aacute; una lista de los circuitos con sus respectivas pastillas a ser medidas. Cuando pulsemos encima del bot&oacute;n <i>Hacer medida</i>, el Arduino har&aacute; los c&aacute;lculos. Un mensaje nos avisar&aacute; que debemos conectar el circuito de medida del volumen y tocar la tercera cuerda (G) de la guitarra. Una vez hecho esto, Arduino nos enviar&aacute; el resultado, que quedar&aacute; reflejado en nuestra pantalla. Si queremos hacer otra medida, podemos pulsar sobre &#x2018;M&aacute;s medidas&#x2019;. No debemos olvidarnos de tener el Ardunio conectado y subirle el fichero <i>san.ino</i> que encontraremos en la p&aacute;gina web.</div>
+		<img class="imageCenter" width="500px" src="/images/serialNo.png"/>
+		<h3>Visualitzar elementos y circuitos</h3>
+		<div>Esta opci&oacute;n es accesible desde el &iacute;ndice y all&iacute; podremos ver los elementos y circuitos que hemos creado pulsando a <a href="/element/list/">Todos los elementos</a> y <a href="/circuit/list/">Todos los circuitos</a> respectivamente.</div>
+		<h3>Realizar una medida</h3>
+		<div>Una vez tenemos nuestro circuito y pastilla medidos, podemos hacer la medida. Para eso, debemos seleccionar un circuiot de nuestra lista. Un desplegable nos mostrar&aacute; los datos del circuito seleccionado. Por &uacute;ltimo, har&aacute; falta introducir el valor de la posici&oacute;n de los potenci&oacute;metros. A trav&eacute;s de una barra m&oacute;vil, indicamos si queremos el potenci&oacute;metro al m&iacute;nimo (valor 0) o al m&aacute;ximo (10). Si pulsamos encima de <i>Haz la medida</i>, obtendremos nuestra primera medida.</div>
+		<h3>Visualizar una medida</h3>
+<img class="imageCenter" width="500px" src="/images/transferfunction.png"/>
+		<div>Para visualizarla en su totalidad, pulsamos sobre <i>Ver detalle</i>, ya sea una vez creada o dentro de la lista <a href="/measure/list/">Todas las medidas</a>. Una vez a la vista en detalle, podremos acceder al circuito sobre el que hemos realizado la medida o ver los resultados emitidos.<br/><br/>En <i>Muestras de audio</i> podemos escuchar unas muestras de audio donde se ha aplicado un filtro con Web Audio API para saber, m&aacute;s o menos, que sonido tiene nuestra guitarra. Tambi&eacute;n podemos ver la curva creada por la funci&oacute;n de transferencia o guiarnos por las etiquetas.<br/><br/>Para saber interpretar los valores resultantes, ir a <a href="#Com afecten els valors de sortida">C&oacute;mo afectan los valores de salida</a>.</div>
+		<h3>Comparar dos medidas</h3>
+		<div>En la misma vista en detalle encontraremos la etiqueta <i>Comparar con</i> con un men&uacute; desplegable. En este men&uacute; encontraremos las diferentes medidas. Si seleccionamos una, nos aparecer&aacute; la informaci&oacute;n al detalle de esta medida. De esta manera podemos contrastar los valores obtenidos sin cambiar de p&aacute;gina.<br/><br/>En el caso del gr&aacute;fico dibujado por la funci&oacute;n de transferencia, las curvas de una y otra medida se sobreponen en colores diferentes.</div>
+		<h3>Eliminar elementos, circuitos y medidas</h3>
+		<div>
+Si bien podemos crear elementos, circuitos o medidas, tambi&eacute;n los podemos eliminar. Tanto en la vista en detalle como en las listas, podemos encontrar el bot&oacute;n <i>Eliminar</i> que nos permitir&aacute; hacer esto. En el caso de eliminar circuitos, debemos tener claro que, si eliminamos un circuito, tambi&eacute;n eliminaremos las medidas de este circuito.</div>
+</br><a href="#">Vuelve arriba</a></br>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+

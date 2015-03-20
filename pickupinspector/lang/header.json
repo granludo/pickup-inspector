@@ -1,0 +1,47 @@
+{ 		
+		"en" : {
+			"new_measure": "New Measure",
+			"all_measures": "All Measures",
+			"new_circuit": "New Circuit",
+			"all_circuits": "All Circuits",
+			"new_pickup": "New Pickup",
+			"new_pot": "New Pot.",
+			"all_elements": "All Elements",
+			"documentation": "Documentation",
+			"source": "Software",
+			"measures": "Measures",
+			"circuits":"Circuits",
+			"elements": "Elements",
+			"others": "Others"
+		}, 
+		"es": {
+			"new_measure": "Nueva Medida",
+			"all_measures": "Listar Medidas",
+			"new_circuit": "Nuevo Circuito",
+			"all_circuits": "Listar Circuitos",
+			"new_pickup": "Nueva Pastilla",
+			"new_pot": "Nuevo Potenc.",
+			"all_elements": "Listar Elem.",
+			"documentation": "Documen.",
+			"source": "Programario",
+			"measures": "Medidas",
+			"circuits":"Circuitos",
+			"elements": "Elementos",
+			"others": "Otros"
+		},
+		"cat": {
+			"new_measure": "Nova mesura",
+			"all_measures": "Llistar mesures",
+			"new_circuit": "Nou circuit",
+			"all_circuits": "Llistar circuits",
+			"new_pickup": "Nova pastilla",
+			"new_pot": "Nou potenc.",
+			"all_elements": "Llistar elem.",
+			"documentation": "Documen.",
+			"source": "Programari",
+			"measures": "Mesures",
+			"circuits":"Circuits",
+			"elements": "Elements",
+			"others": "Altres"
+		}
+}

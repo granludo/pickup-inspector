@@ -1,0 +1,29 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/jquery-ui-1.10.4.custom.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <link href="/css/style.css" rel="stylesheet" type="text/css">
+	 <script type="text/javascript" src="/javascript/init.js"></script>
+	 <script type="text/javascript" src="/javascript/new_pickup.js"></script>
+  <title>New Pickup</title>
+  </head>
+  <body onload="loadPage()">
+    <div id="headerLoader"></div>
+	<div class="main">
+	  <div class="main4">
+		<img class="imageRight" src="" id="preview" alt="">
+		<div><span id="pname">Name</span>: <input type="text" id="name"></input></div>
+		<div><span id="drop_down">Choose an image</span>: <select id="fileImage" onchange="handleImg(this, 'pickup')">
+								  <option value="">...</option>	
+							      </select></div>
+		</form>
+		</br><div><button id="save" onClick="savePickup()">Save Pickup</button></div>  
+		</br><div id='result'></div>
+	  </div>
+	</div>
+  </body>
+</html>
+{% endautoescape %}

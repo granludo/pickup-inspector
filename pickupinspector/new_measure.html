@@ -1,0 +1,40 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/jquery-ui-1.10.4.custom.js"></script>
+     <script type="text/javascript" src="/javascript/math.js"></script>
+     <script type="text/javascript" src="/javascript/pickupmath.js"></script>
+     <script type="text/javascript" src="/javascript/new_pickupmath.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/javascript/init.js"></script>	
+	<script type="text/javascript" src="/javascript/circuit_preview.js"></script>
+	<script type="text/javascript" src="/javascript/new_measure.js"></script>
+	
+  <title>New Measure</title>
+  </head>
+  <body onLoad="loadPage()">
+  <div id="headerLoader"></div>
+  <div class="main">
+	<div class="main4">
+		<div><span id="choose_circuit">Choose a circuit</span>: <select id="option" onChange="loadCircuit()">
+					  <option> ... </option>
+					  {% for c in c_names %}
+						<option> {{ c }} </option>
+					  {% endfor %}
+					  </select>
+		</div></br>
+		<div id="circuitBody">
+			<canvas height="400" width="400" id="circuitPreview"></canvas>
+			<div><b><span id="type_title">Type</span>: </b> <span id="circuitType"></span></div></br>
+			<div id="circuitTemplate"></div>			
+			<div><button id="math" onClick="saveMeasure()" disabled>Do the math!</button></div>     
+			<div id='result'> </div>
+		</div>
+  	</div>
+  </div>
+  </body>
+</html>
+{% endautoescape %}

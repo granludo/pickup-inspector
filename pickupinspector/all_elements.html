@@ -1,0 +1,39 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+	 <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <script src="/javascript/sorttable.js"></script>
+	 <script type="text/javascript" src="/javascript/init.js"></script>
+	 <script type="text/javascript" src="/javascript/all_elements.js"></script>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>All Elements</title>
+  </head>
+  <body onLoad="loadElements({{pickup_names}}, {{pot_names}})">
+	<div id="headerLoader"></div>
+	<div class="main">
+	   <div class="main4">
+		<h3 id="all_pickups"> All Pickups </h3>
+		<table id="pickup_table" class="sortable">
+			<tr class="first_row"><td class="elem_name">Name</td>
+								  <td id="Rp">R (serial)</td>
+								  <td id="Rpp">R (parallel)</td>
+								  <td>Lp</td><td>Cp</td>
+								  <td id="to_measure">To measure with SAN</td></tr>
+		</table>
+		</br></br>
+		<h3 id="all_pots"> All Potentiometers </h3>
+		<table id="pot_table" class="sortable"><tr class="first_row">
+				<td class="elem_name">Name</td><td>R</td><td id="pot_type">type</td><td>Ct</td></tr>
+		</table>
+		</br><div id='result'> </div>
+	  </div>
+		
+	  <div id="imgPopUp" onclick="hideImage()"><img height="350" weight="350"></div>
+	</div>
+	
+  </body>
+</html>
+{% endautoescape %}

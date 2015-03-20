@@ -1,0 +1,34 @@
+<div class="header">	
+	<div id="flagHeader">
+		<button onClick="changeLang('en')" class="flag" style="background-image: url('/images/en.png')"></button>
+		<button onClick="changeLang('es')" class="flag" style="background-image:url('/images/es.png')"></button>
+		<button onClick="changeLang('cat')" class="flag" style="background-image:url('/images/cat.gif')"></button>
+	</div>
+	<h2 id="headerTitle">PICKUP INSPECTOR</h2>
+	<div id="menu">		
+		<div>
+		<ul onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+			<li class="first"><button id="measures">Measures</button></li>
+			<li><form action="/measure/new/" method="get"><input id="new_measure" type="submit" value="New Measure"></input></form></li>
+			<li><form action="/measure/list/" method="get"><input id="all_measures" type="submit" value="All Measures"></input></form></li>
+		</ul>
+		<ul onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+			<li class="first"><button id="circuits">Circuits</button></li>
+			<li><form action="/circuit/new/" method="get"><input id="new_circuit" type="submit" value="New Circuit"></input></form></li>
+			<li><form action="/circuit/list/" method="get"><input id="all_circuits" type="submit" value="All Circuits"></input></form></li>
+		</ul>
+		<ul onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+			<li class="first"><button id="elements">Elements</button></li>
+			<li><form action="/pickup/new/" method="get"><input id="new_pickup" type="submit" value="New Pickup"></input></form></li>
+			<li><form action="/pot/new/" method="get"><input id="new_pot" type="submit" value="New Pot."></input></form></li>
+			<li><form action="/element/list/" method="get"><input id="all_elements" type="submit" value="All Elements"></input></form></li>
+		</ul>
+		<ul onmouseover="showMenu(this)" onmouseout="hideMenu(this)">
+			<li class="first"><button id="others">Others</button></li>
+			<li><form action="/wiki/cat/" method="get"><input id="documentation" type="submit" value="Documentation"></input></form></li>
+			<li><form action="/source/" method="get"><input id="source" type="submit" value="Source"></input></form></li>
+		</ul>
+		</div>
+	</div>
+</div>
+

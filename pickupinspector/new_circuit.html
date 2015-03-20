@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head>
+     <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/jquery-ui-1.10.4.custom.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <link href="/css/style.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src="/javascript/init.js"></script>
+	 <script type="text/javascript" src="/javascript/circuit_preview.js"></script>
+	 <script type="text/javascript" src="/javascript/new_circuit.js"></script>
+  <title>New Circuit</title>
+  </head>
+  <body onLoad="loadPage()">
+    <div id="headerLoader"></div>
+	<div class="main">
+	  <div class="main4">
+		<div><b><span id="choose_type"> Choose a circuit type </span></b>
+				<select id="optionCircuit" onChange="loadCircuitTemplate()">
+					<option>...</option>
+					{% for t in types %}
+						<option> {{ t }} </option>
+					{% endfor %}
+				</select>
+		</div>
+		</br>
+		<div id="circuitBody">
+			<canvas height="400" width="400" id="circuitPreview"></canvas>
+			<span id="cname">Name</span>: <input type="text" id="name"></input>
+			<div id="circuitTemplate"></div>
+			<div><button id="save" onClick="saveCircuit()">Save Circuit</button></div>     
+			<div id='result'></div>
+		</div>
+	  </div>
+	</div>
+  </body>
+</html>

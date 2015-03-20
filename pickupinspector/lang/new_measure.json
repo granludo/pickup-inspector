@@ -1,0 +1,20 @@
+{ 		
+		"en" : {
+			"title": "New Measure",
+			"choose_circuit": "Choose a circuit",
+			"math": "Do the math!",
+			"type_title": "Type"
+		}, 
+		"es": {
+			"title": "Nueva medida",
+			"choose_circuit": "Elige un circuito",
+			"math": "Haz la medida!",
+			"type_title": "Tipo"
+		},
+		"cat": {
+			"title": "Nova mesura",
+			"choose_circuit": "Tria un circuit",
+			"math": "Fes la mesura!",
+			"type_title": "Tipus"
+		}
+}

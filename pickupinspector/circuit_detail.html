@@ -1,0 +1,53 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+	<title>Circuit Detail</title>
+	 <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <script src="/javascript/sorttable.js"></script>
+	 <script type="text/javascript" src="/javascript/init.js"></script>
+     <script type="text/javascript" src="/javascript/circuit_preview.js"></script>
+	 <script type="text/javascript" src="/javascript/circuit_detail.js"></script>
+	 <link href="/css/style.css" rel="stylesheet" type="text/css">
+  </head>
+  <body onLoad="loadCircuit({{c}})">
+	<div id="headerLoader"></div>
+	<div class="main" id="circuitContent">	
+	  <div class="main4">
+		<div id="circuitBody">
+			<canvas height="400" width="400" id="circuitPreview"></canvas>
+			<button onclick="removeCircuit('{{c.id}}')"><span class="remove">Remove</span></button>
+			<div><b><span class="name">Name</span>: </b> {{ c.id }} </div>
+			<div><b><span id="type_title">Type</span>: </b><span id="circuitType">
+				{%if c.type == "serial_1_2"%}
+					Serial: 1 pickup, 2 potentiometers 
+				{% else %}
+					Custom circuit
+				{% endif %}
+			</span></div></br>
+			<div id="circuitTemplate"></div>
+		</div>
+	 </div>
+	 <div class="main4"><b><span id="measures_title"> Measures from this circuit </span></b></br>
+			  <table class="sortable"><tr class="first_row"><td>ID</td><td id="date">Date</td><td>F</td><td>Q</td></tr>
+					{% for m in m_names %}
+						<tr id="m{{m.id}}"> 
+							<td> {{m.id}}</td>
+							<td> {{m.date}}</td>  
+					 		<td> {{m.f/1000}} kHz</td>  
+							<td> {{m.q}} </td> 
+							<td><form action="/measure/list/{{m.id}}" method="get">
+								<input class="see_detail" type="submit" value="see detail"></input> 
+								</form> 
+							</td>
+							<td><button class="remove" onclick="removeMeasure({{m.id}})">remove</button>
+							</td>
+						</tr>
+					{% endfor %}
+			  </table>	
+	 </div>
+	</div>
+  </body>
+</html>
+{% endautoescape %}

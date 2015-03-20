@@ -1,0 +1,41 @@
+{ 		
+		"en" : {
+			"title": "Measure detail",
+			"compare": "Compare with",
+			"see_detail": "see detail",
+			"circuit_title": "Circuit",
+			"remove": "Remove",
+			"date": "Date",
+			"pos_pot_title": "Potentiometers position",
+			"audio_title": "Audio Samples",
+			"tag_title": "Tags",
+			"play_pause": "Play/Pause",
+			"graphic_title": "Transfer Function Graph"
+		}, 
+		"es": {
+			"title": "Detalle de la medida",
+			"compare": "Compara con",
+			"see_detail": "ver detalle",
+			"circuit_title": "Circuito",
+			"remove": "Eliminar",
+			"date": "Fecha",
+			"pos_pot_title": "Posición de los potenciómetros",
+			"audio_title": "Muestras de audio",
+			"tag_title": "Etiquetas",
+			"play_pause": "Reprod./Pausa",
+			"graphic_title": "Gráfica de la función de transferencia"
+		},
+		"cat": {
+			"title": "Detall de la mesura",
+			"compare": "Compara amb",
+			"see_detail": "veure detall",
+			"circuit_title": "Circuit",
+			"remove": "Eliminar",
+			"date": "Data",
+			"pos_pot_title": "Posició dels potenciòmetres",
+			"audio_title": "Mostres d'àudio",
+			"tag_title": "Etiquetes",
+			"play_pause": "Reprod./Pausa",
+			"graphic_title": "Gràfic de la funció de transferència"
+		}
+}

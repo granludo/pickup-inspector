@@ -1,0 +1,29 @@
+{ 		
+		"en" : {
+			"tag1": "Very mellow, dull, muffled",
+			"tag2": "Fat, bluesy",
+			"tag3": "Warm, full",
+			"tag4": "Brilliant",
+			"tag5": "Metallic hard, \"twangy\", Fender sound",
+			"tag6": "Piercing",
+			"tag7": "Brittle, glassy"
+		}, 
+		"es": {
+			"tag1": "Muy suave, apagado",
+			"tag2": "Grave, \"bluesy\"",
+			"tag3": "Intermedio",
+			"tag4": "Brillante",
+			"tag5": "Metálico, \"twangy\", sonido Fender",
+			"tag6": "Agudo, escarpado",
+			"tag7": "Frágil"
+		},
+		"cat": {
+			"tag1": "Suau, apagat",
+			"tag2": "Greu, \"bluesy\"",
+			"tag3": "Intermig",
+			"tag4": "Brillant",
+			"tag5": "Metàlic, \"twangy\", so Fender",
+			"tag6": "Agut, escarpat",
+			"tag7": "Fràgil, trencadís"
+		}
+}

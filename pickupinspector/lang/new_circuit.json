@@ -1,0 +1,20 @@
+{ 		
+		"en" : {
+			"title": "New Circuit",
+			"choose_type": "Choose a circuit type",
+			"cname": "Name",
+			"save": "Save Circuit"
+		}, 
+		"es": {
+			"title": "Nuevo circuito",
+			"choose_type": "Elige un tipo de circuito",
+			"cname": "Nombre",
+			"save": "Guardar circuito"
+		},
+		"cat": {
+			"title": "Nou circuit",
+			"choose_type": "Tria un tipus de circuit",
+			"cname": "Nom",
+			"save": "Guardar circuit"
+		}
+}

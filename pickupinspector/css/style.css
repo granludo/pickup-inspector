@@ -1,0 +1,254 @@
+body{
+	background-color:#eeeeee;
+	font-family:Verdana,sans-serif;
+	position: relative;
+}
+
+table {
+	text-align: center;
+	font-size:85%;
+}
+
+tr.first_row td {
+  border-bottom:2px solid black;
+  font-weight: bold;
+}
+
+td {
+	padding-left: 7px;
+	padding-right: 7px;
+}
+
+#compare, #circuit{
+	visibility:hidden;
+}
+
+#compare{
+	float:right;
+}
+
+.compare {
+	float:right;
+	margin-right: auto;
+	margin-left: auto;
+	display:inline-block;
+}
+
+.compare_option {
+	float:right;
+	margin-right: auto;
+	margin-left: auto;
+	display:inline-block;
+}
+
+span.compare{
+	margin-right:10px;
+	margin-top:3px;
+	font-weight:bold;
+}
+
+div.main, div.main2, div.main3, div.main4{
+	width:80%;
+	margin-left: auto ;
+    margin-right: auto ;
+	background-color:#ffffff;
+	padding:10px;
+	padding-bottom:20px;
+	overflow:auto;
+}
+
+div.main2{
+	width:40%;
+	float:left;
+}
+
+div.main3 {
+	width:65%;
+}
+
+div.main4{
+	width:90%;
+	position: relative;
+}
+
+input[type=submit], input[type="checkbox"], button {
+	background-color:black;
+	color:white;
+	border-color:white;
+	border-style:solid;
+	padding-bottom:2px;
+	padding-top:2px;
+	width:120px;
+}
+
+input[type=submit]:hover, button:hover, input[type="checkbox"]:hover, select:hover, option:hover{
+	background-color:#999999;
+	cursor:pointer;
+}
+
+input[type="checkbox"]{
+	background-color:#999999;
+}
+
+select {
+	background-color:black;
+	color:white;
+	border-color:white;
+	border-style:solid;
+	border-radius:5px;
+	background:none;
+	cursor:pointer;
+}
+
+option, select {
+	background-color:black;
+	color:white;
+	cursor:pointer;
+}
+
+div.main input[type=submit], div.main button, div.main4 input[type=submit], div.main4 button {
+  margin: 0px;
+  margin-bottom: 10px;
+  font-size: 90%;
+  width:auto;
+}
+
+input[type=text] {
+ 	width: 120px;
+	margin: 0px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	border-bottom:2px solid black;
+	width:87%;
+	margin-left:auto;
+	margin-right:auto;
+	display:block;
+	margin-bottom: 10px;
+	margin-top: 0px;
+}
+
+#canvas{
+	text-align:center;
+	margin-top:-40px;
+}
+
+canvas{
+	margin-left: auto;
+    margin-right: auto;
+}
+
+.header{
+	width:80%;
+	height: 90px;
+	margin: auto;
+	background-color:#ffffff;
+	padding:10px;
+	padding-bottom:20px;
+	text-align:center;
+	overflow: visible;
+}
+
+
+a {
+	color:black;
+	margin-left:15px;
+}
+
+a:hover{
+	color:#999999;
+}
+
+#headerTitle{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+}
+
+#imgPopUp {
+  	position: absolute;
+  	top: 20%;  
+   	left: 40%;
+	margin-left: -150px;
+  	visibility: hidden;
+	z-index: 1;
+}
+
+#imgPopUp img{
+	border:1px solid black;  
+	max-width:500px; 
+	height: auto;
+}
+
+#imgPopUp img:hover{
+	cursor: pointer;
+	opacity:0.9;
+	background-color:white;
+}
+
+.imageRight{
+	float:right;
+	margin:50px;
+}
+
+#preview{
+	max-width: 300px;
+}
+
+#circuitPreview {
+	float:right;
+	margin: 15px;
+}
+
+#circuitMeasures{
+	bottom:20px;
+}
+
+#circuitBody{
+	visibility: hidden;
+}
+
+.flag{
+	width: 25px; 
+	height:18px; 
+	background-size:100%;
+	float:left;
+}
+
+#flagHeader{
+	width:87%;
+	display: inline-block;
+}
+
+
+div #menu {
+	position: absolute;
+	z-index:1;	
+	left: 50%;
+	
+}
+
+div #menu div {
+	position: relative;
+	left: -50%;
+}
+
+ul{
+	padding: 0px;
+	margin: 0px;
+	list-style: none;	
+	display: inline;
+	float: left;
+}
+
+li {
+	padding: 0px;
+	margin: 0px;
+	width: 120px;
+	display: none;
+	
+}
+
+li.first {
+	display: block;
+}
+

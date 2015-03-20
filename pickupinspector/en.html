@@ -1,0 +1,85 @@
+<html>
+<head> <title>Documentation</title>
+	<link href="/css/wiki.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="/javascript/javascript.js"></script>
+</head>
+<body>
+
+<div class="main">
+	<div id="flags"> 
+		<form action="/wiki/cat/" method="get"><input class="flags" type="image" width="25" src="/images/cat.gif" value="cat"></form>
+		<form action="/wiki/en/" method="get"><input class="flags" type="image" width="25" src="/images/en.png" value="en"></form>
+		<form action="/wiki/cast/" method="get"><input class="flags" type="image" width="25" src="/images/es.png" name="es"></form>
+		<form action="/" method="get"><input class="back" type="submit" width="48" value="Back to index"></form>
+	</div>
+	<h1>DOCUMENTATION</h1>
+	<div> <a href="#Introduction">Introduction</a> <a href="#Theory">Theory</a> <a href="#Tutorial">Tutorial</a> </div>
+	<h2><a name="Introduction"> Introduction </a> </h2>
+	<h3>What&#x2019;s Pickup Inspector?</h3>
+	<div>Is a system which tries to give an objective and scientific mechanism to assess guitar enthusiastics about the guitar sound.
+	</div> 
+	<img class="imageRight" width="300px" src="/images/pickupad.jpg"/></br>
+	<h3> Why Pickup Inspector? </h3>
+	<div>In the electric guitar world there isn&#x2019;t much knowledge about pickups. Companies try, through publicity, to make the 		customer believe that his pickup has a specific sound, but there&#x2019;s no scientific basis to ensure that. From the Helmuth Lemme book <i>Electric Guitar: Sound Secrets and Technology</i>, we find a theoric and practic basis to extract the cualitative value of the pickups.</div>
+	<h2><a name="Theory">Theory</a></h2>
+	<div>In a guitar there are a lot of elements that affect on the final sound. In our case we pretend to give value to the electric circuit that captures the sound and sends it to the amp. An electric circuit consists of one or more pickups and other elements such as volume and sound potentiometers, switches, capacitors, active elements and more. For now, Pickup Inspector only provides a simple circuit consisting on a single pickup, a volume potentiometer and a sound one. From these elements features we obtain the basic values to learn more about our guitar sound.</div>
+	<h3>Input values</h3>
+	<img class="imageRight" width="200px" src="/images/electricbook.jpg"/>
+	<div>Based on Lemme&#x2019;s theory, the main values to consider are the following ones. For the pickup:</div>
+	</br>
+	<p> Inductance (L), measured in Henries (H).</p>
+	<p> Capacitance (C), measured in Faradays (F).</p>
+	<p> Serial and parallel resistances (R), measured in Ohms (&#x03a9;). </p>
+	<p> Volume (Vol), measured in Volts (V).</p>
+	<p> Initial voltage (V0), measured in Volts (V).</p>
+	</br>
+	<div>For the potentiometer we consider their resistances, measured in Ohms (&#x03a9;). Other values to consider are the tone capacitor and cable capacitance, measured in Faradays (F). For a circuit configuration potentiometers positions are also important. This feature is a value between 0 and 1. 0 means that the potentiometer is on its initial position (minimum volume) and 1 is on its final position (maximum volume).</div>
+	<h3>Output values</h3>
+	<div>From these values we build a transfer function and we get a low-pass filter. If we apply this function over a human audible range of frequencies (from 0 to 20Khz), the filter will find a cut frequency (fg). In this frequency, the transfer function falls at 20db/decade. Before getting to this frequency we find a resonance between the pickup inductance and the circuit capacitance. The frequency when we find this resonance is called <b>resonance frequency (fo)</b> and exhibits an amplitude peak. When we apply the transfer function to the initial voltage V0, we get the output voltage V1. The relation between V0 and V1 it&#x2019;s called <b>Q or quality</b>.</div></br>
+	<img class="imageCenter" src="/images/frequencyresponse.gif"/>
+	<h3><a name="How output values affect sound">How output values affect sound</a></h3>
+	<div>By knowing the frequency resonance and V1 (or Q) we can know with a lot of precission how our circuit will affect on the guitar sound. Giving the low-pass filter, the overtones near the resonance frequency will be amplified as overtones very distant to it will be atenuated at 20db/decade. The lower overtones will not be modified. We can describe the sound on the resonance frequency in a synesthetic way:</div>
+	</br>
+	<p>if f0 is under 1500Hz, the sound is very soft, dull.</p>
+	<p>if f0 is near 2000Hz, the sound is very fat, <i>bluesy</i>.</p>
+	<p>if f0 is near 2500Hz, the sound is warm, full. </p>
+	<p>if f0 is near 3000Hz, the sound is brilliant.</p>
+	<p>if f0 is near 4000Hz, the sound is the typical Fender sound, metal&#x00b7;lic hard or <i>twangy</i>.</p>
+	<p>if f0 is near 5000Hz-6000Hz, the sound is piercing.</p>
+	<p>if f0 is over 7000Hz the sound is brittle and glassy</p>
+	</br>
+	<div>The Q relation indicates the guitar <i>expression</i>. As higher the Q, the clearer are the sound characteristics described above. A Q near 1.5 or 2 will give a strong sound, while a Q above 3 will give a strident sound.</div>
+
+	<h2><a name="Tutorial">Pickup Inspector Tutorial</a></h2>
+	<div>The main Pickup Inspector target is to obtain measures over a circuit and be able to interpret them so we will make a small guide to get to this point. Pickup Inspector has to main parts. First we have the web application, where we can handle our circuits and view our measures results. On the other hand we have the electronic part, consisting of an Arduino and the local program SAN (Analysis System). We will refer to these subsystems as <i>the web</i> and SAN.</div>
+	<img class="imageLeft" width="500px" src="/images/SED4.jpg"/>
+	<h3>How to create a circuit</h3>
+	<div>In first place we will need to create a circuit in order to measure it. To create a circuit we can go to the <a href="/circuit/new/">New Circuit</a> tab from the web&#x2019;s main page. The web will ask for a name for our circuit. The circuit&#x2019;s name must be unique. Then, the web will ask form the elements of which the circuit consists of. </br></br> For now, the web only accepts a basic circuit consisting of a single pickup, a volume potentiometer and a sound one. For each of these three elements we will choose an option from the drop-down menus. To create our own elements, go to <a href="#How to create elements"> How to create elements</a>. A forms will show the elements characteristics. When we finally have the elements that we want, click over <i>Save Circuit</i> and we will get a message confirming the creation of our circuit. We also have the option to add the cable capacitance (Cc). It&#x2019;s an optional field that has 0 as default value.</div>
+	<h3><a name="How to create elements">How to create elements</a></h3>
+	<div>The circuit elements can be of three kinds: Pickups, volume potentiometers or sound potentiometers.</div>
+	<h4>Potentiometers</h4>
+	<div>Go to the <a href="/pot/new/">New Potentiometer</a> tab from the web to create a new potentiometer. Here we will have to choose which type of potentiometer we want (volume or sound). If we choose the tone  kind we will have to enter the tone capacitor value. Take care at the value scale: it&#x2019;s not the same 0.47 pF or 0.47 nF! When we have entered the values, we click over <i>Save Potentiometer</i> and that&#x2019;s it.</div>
+	<h4>Pickups</h4>
+	<div>Pickups are the main element in our circuit. To create a pickup we must go to <a href="/pickup/new/">New Pickup</a> and choose a name. It will be necessary to use the SAN local aplication with Arduino. For logic reasons, to measure the pickup&#x2019;s parameters, it is needed to include this pickup to a new circuit. To get SAN we can download it from the tab <a href="/source/">Source</a> in the web. We must also install the software requirements.<br/><br/>Once we got it, we must connect our Arduino to the PC and find the name of his serial port. To do so, let&#x2019;s open the Arduino software and go to the tab <i>Tools -&gt; Serial Port</i>. </div>
+		<img class="imageCenter" width="500px" src="/images/puertoserial.jpg"/>
+<div>We write down its value and we open the gui.py source code with a text editor (Notepad). We must find the <i>serialNo</i>
+ parameter and we must change it to the value of our serial port. If our serial port name is <i>serialPort1</i>, we must write like &#x2018;serialPort1&#x2019;. Once we&#x2019;ve done this change, it won&#x2019;t be necessary to do it everytime we do a measure. Let&#x2019;s save the file and execute it:</div>
+
+</br><p class="code">python gui.py</p></br>
+
+<div>When we open the program, it will appear a tag welcoming us and asking for the language we want to use. Let&#x2019;s choose one and keep going. SAN will provide us with a list of circuits and its pickups to be measured. When we click over the button <i>Do the measure</i>, Arduino will do the calculus. A message will warn us that we must connect the volume measure circuit to the pickup and hit the third string (G). Once we've done this, Arduino will print the result on the screen. If we want to do another measure, we can click over <i>More measures</i>. We must not forget to keep Arduino connected and upload the file <i>san.ino</i> to it. <br/></div>
+<img class="imageCenter" width="500px" src="/images/serialNo.png"/>
+	<h3>View elements and circuits</h3>
+	<div>This option is also accessible from the main page. We can view the circuits that we have until now. If we go to <i>See detail</i> we can see the circuit values and a list of the measures made over the circuit.</div>
+	<h3>Make a measure</h3>
+	<div>When we have all this, we can do a measure. Go to <i>New Measure</i> and select a circuit from the drop-down list. A form will show the circuit values. Finally we will have to enter the potentiometers position. A 0 means a minimum value and 1 means a maximum value. If we click <i>Do the math</i> and we wait a few seconds, we will get our first measure.</div>
+	<h3>View a measure</h3>
+	<div>To view a measure we click over <i>See detail</i> or we can go to the measure list with <i>All measures</i>. There we can see the measure in detail and we can go to the measured circuit or see the measure results. Some Audio Sample are provided. A Web Audio API filter has been applied over them to know, more or less, how the guitar will sound like. We also can see the curbe made by the transfer function or guide us with the tags. To know how to interpret the measure values, go to <a href="#How output values affect sound">How output values affect sound</a>.</div></br>
+	<img class="imageCenter" width="500px" src="/images/transferfunction.png"/>
+	<h3>Compare two measures</h3><div>In the same page measure page we will find the label <i>Compare with</i> with a drop-down menu next to it. In this menu we will find other measures id&#x2019;s. If we select one, it will appear this measure data. So now we can compare two measures in the same page. In the transfer function graphic we will have the two curbes, one over the other.</div>
+	<h3>Remove elements, circuits and measures</h3>
+	<div>So now we can create elements, circuits and measures but we can also delete them. In the detail page and in the list we can find a 	<i>Remove</i> button that will enable us to do so. In the circuit case we have to consider that if we remove a circuit, we also will remove the measures over it.</div></br><a href="#">Go up</a></br>
+</div>
+</body>
+</html>

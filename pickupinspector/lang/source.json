@@ -1,0 +1,44 @@
+{ 		
+		"en" : {
+			"title": "Source",
+			"requirements": "SAN Requirements",
+			"python": "basic Python",
+			"pip": "easy installation package", 
+			"pyserial": "serial comunication module",
+			"tkinter": "basic GUI module",
+			"arduino1": "Arduino Software",
+			"sources":"SAN Sources",
+			"zip":"SAN Code (as .zip)",
+			"graph_san":"Graphical SAN",
+			"line_san":"Command Line SAN",
+			"arduino2":"Code for Arduino"
+		}, 
+		"es": {
+			"title": "Programario",
+			"requirements": "Requisitios de SAN",
+			"python": "librería básica de Python",
+			"pip": "senzillo instalador de paquetes", 
+			"pyserial": "módulo de comunicación por el puerto serie",
+			"tkinter": "librería para la interfaz gráfica",
+			"arduino1": "Software de Arduino",
+			"sources":"Código para SAN",
+			"zip":"Código completo (en .zip)",
+			"graph_san":"Aplicación gráfica",
+			"line_san":"Aplicación por línea de comandos",
+			"arduino2":"Código para Arduino"
+		},
+		"cat": {
+			"title": "Programari",
+			"requirements": "Requisits de SAN",
+			"python": "llibreria bàsica de Python",
+			"pip": "senzill instal·lador de paquets", 
+			"pyserial": "mòdul de comunicació pel port sèrie",
+			"tkinter": "llibrería per la interficíe gràfica",
+			"arduino1": "Software d'Arduino",
+			"sources":"Codi per SAN",
+			"zip":"Codi complet (en .zip)",
+			"graph_san":"Aplicació gràfica",
+			"line_san":"Aplicació per linia de comandes",
+			"arduino2":"Codi per Arduino"
+		}
+}

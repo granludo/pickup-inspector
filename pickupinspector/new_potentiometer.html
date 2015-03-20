@@ -1,0 +1,48 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/jquery-ui-1.10.4.custom.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <link href="/css/style.css" rel="stylesheet" type="text/css">
+     <script type="text/javascript" src="/javascript/init.js"></script>
+	 <script type="text/javascript" src="/javascript/new_pot.js"></script>
+  <title>New Potentiometer</title>
+  </head>
+  <body onLoad="loadPage()">
+    <div id="headerLoader"></div>
+	<div class="main">
+		<div class="main4">
+			<img class="imageRight" src="" height=200 id="preview" alt="">
+			<div><span id="pname">Name</span>: <input type="text" id="name"></input>
+			<select id="potType" style="margin-bottom:10px" onchange="potTypeChange()">
+				  <option id="volume" value="volume"> Volume</option>
+			  	  <option id="tone" value="tone"> Tone</option>
+				 </select>
+			</div>
+			<div><span id="resistance">Resistance</span>: 
+				<input type="text" id="R" value="250">
+				</input><span id="RScale" value=1000> k&#937;<span>
+			</div>	
+			<div><span id="tone_capacitor" style="width:120px;">Tone capacitor</span>: 
+				<input type="text" id="Ct" value="470" disabled></input>
+							  <select id="CtScale">
+							  <option value=0.000000001> nF</option>
+							  <option value=0.000000000001> pF</option>
+					  		  <option value=0.000001> &mu;F</option>
+							  </select>
+			</div>
+			<form action="">		
+			<span id="drop_down">or choose an image</span>: <select id="fileImage" onchange="handleImg(this, 'pot')">
+				  <option value="">...</option>		
+				  </select>
+			</form>
+			</br><div><button id="save" onClick="savePot()">Save Pot</button></div>     
+			<div id='result'></div>
+			</br><div></div>        
+		</div>
+	</div>
+  </body>
+{% endautoescape %}
+</html>

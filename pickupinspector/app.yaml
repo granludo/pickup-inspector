@@ -1,0 +1,37 @@
+application: pickupinspector
+version: 4
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /images
+  static_dir: images
+
+- url: /javascript
+  static_dir: javascript
+
+- url: /html
+  static_dir: html
+
+- url: /san
+  static_dir: SAN 
+
+- url: /css
+  static_dir: css
+
+- url: /audio
+  static_dir: audio
+
+- url: /lang
+  static_dir: lang
+  mime_type: application/json
+
+- url: /.*
+  script: index.application 
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

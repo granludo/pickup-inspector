@@ -1,0 +1,44 @@
+<!doctype html>
+{% autoescape true %}
+<html>
+  <head>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+	 <script type="text/javascript" src="/javascript/jquery-2.1.0.min.js"></script>
+     <script type="text/javascript" src="/javascript/javascript.js"></script>
+	 <script src="/javascript/sorttable.js"></script>
+	 <script type="text/javascript" src="/javascript/init.js"></script>
+	 <script type="text/javascript" src="/javascript/all_circuits.js"></script>
+     <link href="/css/style.css" rel="stylesheet" type="text/css">
+  <title>All Circuits</title>
+  </head>
+  <body onload="loadPage()">
+	<div id="headerLoader"></div>
+	<div class="main">
+		<div class="main4">
+			<table class="sortable"><tr class="first_row">
+				<td id="circuit_name">Name</td>
+				<td id="circuit_type">Type</td>
+				<td id="circuit_pickup">Pickup</tr>
+				{% for c in c_names %}
+					<tr id="c{{c.id}}">
+						<td> {{c.id}} </td>
+						{% if c.type == "serial_1_2" %}
+							<td class="serial_1_2"> Serial: 1 pickup, 2 potentiometers </td>
+						{% else %}
+							<td class="custom"> Custom circuit </td>
+						{% endif %}
+						<td> {{c.pickup}} </td>
+						<td><form action="{{c.id}}" method="get">
+							<input class="see_detail" type="submit" value="see detail"></input> 
+							</form> 
+						</td>
+						<td><button class="remove" onclick="removeCircuit('{{c.id}}')">remove</button>
+						</td>
+					</tr>
+				{% endfor %}
+			</table>
+		</div>
+	</div>
+  </body>
+</html>
+{% endautoescape %}

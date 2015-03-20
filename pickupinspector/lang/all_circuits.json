@@ -1,0 +1,32 @@
+{ 		
+		"en" : {
+			"title": "All Circuits",
+			"circuit_name": "Name",
+			"circuit_type": "Type",
+			"circuit_pickup": "Pickup",
+			"custom": "Custom circuit", 
+			"serial_1_2": "Serial: 1 pickup, 2 potentiometers",
+			"see_detail": "see detail",
+			"remove": "remove"
+		}, 
+		"es": {
+			"title": "Listar circuitos",
+			"circuit_name": "Nombre",
+			"circuit_type": "Tipo",
+			"circuit_pickup": "Pastilla",
+			"custom": "Personalizado",
+			"serial_1_2": "En serie: 1 pastilla, 2 potenciómetros",
+			"see_detail": "ver detalle",
+			"remove": "eliminar"
+		},
+		"cat": {
+			"title": "Llistar circuits",
+			"circuit_name": "Nom",
+			"circuit_type": "Tipus",
+			"circuit_pickup": "Pastilla",
+			"custom": "Personalitzat", 
+			"serial_1_2": "En sèrie: 1 pastilla, 2 potenciòmetres",
+			"see_detail": "veure detall",
+			"remove": "eliminar"
+		}
+}
